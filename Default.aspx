@@ -11,16 +11,16 @@
         <p>您可以在此处选择图像后上传。（格式为.mat）</p>
         <p>&nbsp;</p>
         <p>
-            <asp:Label ID="lblStatus" runat="server" Text="是否正确上传图像：否"></asp:Label>
+            <asp:Label ID="lblStatus" runat="server" Text="是否正确上传图像：否" BorderColor="#CCCCFF" BorderStyle="Solid"></asp:Label>
         </p>
         <p>
-            <asp:Label ID="lblStatusFormat" runat="server" Text="当前文件格式：(未知)"></asp:Label>
+            <asp:Label ID="lblStatusFormat" runat="server" Text="当前文件格式：(未知)" BorderColor="#CCCCFF" BorderStyle="Solid"></asp:Label>
         </p>
         <p>
-            <asp:FileUpload ID="fileImgUp" runat="server" Height="45px" Width="300px" />
+            <asp:FileUpload ID="fileImgUp" runat="server" Height="45px" Width="300px" BorderColor="#003300" />
         </p>
         <p>
-            <asp:Button ID="BtnUpImg" runat="server" Text="上传图像" Width="300px" OnClick="BtnUpImg_Click" />
+            <asp:Button ID="BtnUpImg" runat="server" Text="上传图像" Width="300px" OnClick="BtnUpImg_Click" BorderColor="White" />
         </p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
@@ -31,30 +31,30 @@
         <p>
             图像名称：</p>
         <p>
-            <asp:Label ID="lblImgName" runat="server" Text="（未知）"></asp:Label>
+            <asp:Label ID="lblImgName" runat="server" Text="（未知）" BorderColor="#CCCCFF" BorderStyle="Solid"></asp:Label>
         </p>
         <p>
             图像大小：</p>
         <p>
-            <asp:Label ID="lblImgSize" runat="server" Text="（未知）"></asp:Label>
+            <asp:Label ID="lblImgSize" runat="server" Text="（未知）" BorderColor="#CCCCFF" BorderStyle="Solid"></asp:Label>
         </p>
         <p>
             请选择图像所属数据集：</p>
         <p>
-            <asp:Label ID="lblDataSet" runat="server" Text="（未知数据集）"></asp:Label>
+            <asp:Label ID="lblDataSet" runat="server" Text="（未知数据集）" BorderColor="#CCCCFF" BorderStyle="Solid"></asp:Label>
         </p>
         <p>
-            <asp:CheckBox ID="CheckBox_Dataset1" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox_Dataset1_CheckedChanged" Text="数据集1" />
-            <asp:CheckBox ID="CheckBox_Dataset2" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox_Dataset2_CheckedChanged" Text="数据集2" />
-            <asp:CheckBox ID="CheckBox_Dataset3" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox_Dataset3_CheckedChanged" Text="数据集3" />
+            <asp:CheckBox ID="CheckBox_Dataset1" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox_Dataset1_CheckedChanged" Text="Indian Pines" />
+            <asp:CheckBox ID="CheckBox_Dataset2" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox_Dataset2_CheckedChanged" Text="Salinas" Enabled="False" />
+            <asp:CheckBox ID="CheckBox_Dataset3" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox_Dataset3_CheckedChanged" Text="Pavia University" Enabled="False" />
         </p>
         <p>
-            <asp:Button ID="BtnStart" runat="server" Text="开始分类" Width="300px" />
+            <asp:Button ID="BtnStart" runat="server" Text="开始分类" Width="300px" BorderColor="White" />
         </p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
         <p>3. 分类结果</p>
-        <p>激动人心的时刻到了，这是您的分类结果，请查看！</p>
+        <p>这是您的分类结果，请查看！</p>
         <p>(TODO......)</p>
     </div>
     

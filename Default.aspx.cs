@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -55,6 +56,10 @@ namespace Web_HyperVC
                     ImgPath = savePath;
                     lblStatus.Text = "是否正确上传图像：是";
                     lblStatusFormat.Text = "当前文件格式：(.mat)";
+
+                    FileInfo fileInfo = new FileInfo(@savePath);
+                    lblImgName.Text = fileInfo.Name;
+                    lblImgSize.Text = (fileInfo.Length / 1024).ToString()+" KB";                   
                 }
                 else
                 {
@@ -69,17 +74,22 @@ namespace Web_HyperVC
             {
                 CheckBox_Dataset2.Checked = false;
                 CheckBox_Dataset3.Checked = false;
+                lblDataSet.Text = CheckBox_Dataset1.Text;
             }
             else if(index == 1 && CheckBox_Dataset2.Checked == true)
             {
                 CheckBox_Dataset1.Checked = false;
                 CheckBox_Dataset3.Checked = false;
+                lblDataSet.Text = CheckBox_Dataset2.Text;
             }
             else if(index == 2 && CheckBox_Dataset3.Checked == true)
             {
                 CheckBox_Dataset1.Checked = false;
                 CheckBox_Dataset2.Checked = false;
+                lblDataSet.Text = CheckBox_Dataset3.Text;
             }
         }
+
+
     }
 }
