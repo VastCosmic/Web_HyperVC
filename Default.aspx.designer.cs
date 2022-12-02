@@ -15,22 +15,31 @@ namespace Web_HyperVC
     {
 
         /// <summary>
-        /// ImgUser 控件。
+        /// lblStatus 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImgUser;
+        protected global::System.Web.UI.WebControls.Label lblStatus;
 
         /// <summary>
-        /// ImgUp 控件。
+        /// lblStatusFormat 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload ImgUp;
+        protected global::System.Web.UI.WebControls.Label lblStatusFormat;
+
+        /// <summary>
+        /// fileImgUp 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileImgUp;
 
         /// <summary>
         /// BtnUpImg 控件。
@@ -42,13 +51,58 @@ namespace Web_HyperVC
         protected global::System.Web.UI.WebControls.Button BtnUpImg;
 
         /// <summary>
-        /// ImgUserCheck 控件。
+        /// lblImgName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImgUserCheck;
+        protected global::System.Web.UI.WebControls.Label lblImgName;
+
+        /// <summary>
+        /// lblImgSize 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblImgSize;
+
+        /// <summary>
+        /// lblDataSet 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDataSet;
+
+        /// <summary>
+        /// CheckBox_Dataset1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_Dataset1;
+
+        /// <summary>
+        /// CheckBox_Dataset2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_Dataset2;
+
+        /// <summary>
+        /// CheckBox_Dataset3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_Dataset3;
 
         /// <summary>
         /// BtnStart 控件。
