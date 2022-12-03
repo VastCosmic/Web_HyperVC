@@ -9,12 +9,7 @@ namespace Web_HyperVC
 {
     public partial class Contact : Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        protected void BtnContactSend_Click(object sender, EventArgs e)
         {
 
         }

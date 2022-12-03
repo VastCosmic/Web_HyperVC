@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>HyperVC - 高光谱图像分类</h1>
+        <center><h1>HyperVC - 高光谱图像分类</h1></center>
         <p>&nbsp;</p>
         <p>现在开始吧！使用简单的几步，即可完成图像分类：</p>
         <p>&nbsp;</p>
@@ -56,6 +56,7 @@
         <p>3. 分类结果</p>
         <p>这是您的分类结果，请查看！</p>
         <p>(TODO......)</p>
+        <p>&nbsp;</p>
     </div>
     
 </asp:Content>

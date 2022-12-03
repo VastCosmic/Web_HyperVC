@@ -13,7 +13,7 @@
         <asp:TextBox ID="TxtBoxContact" runat="server" Height="300px" OnTextChanged="TextBox1_TextChanged" Width="600px"></asp:TextBox>
     </address>
     <address>
-        <asp:Button ID="BtnContactSend" runat="server" Height="30px" Text="发送" Width="600px" />
+        <asp:Button ID="BtnContactSend" runat="server" Height="30px" Text="发送" Width="600px" OnClick="BtnContactSend_Click" />
         <br />
     </address>
 </asp:Content>
