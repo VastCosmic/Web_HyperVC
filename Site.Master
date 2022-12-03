@@ -54,6 +54,7 @@
                         <li><a runat="server" href="~/">主页</a></li>
                         <li><a runat="server" href="~/About">关于</a></li>
                         <li><a runat="server" href="~/Contact">联系方式</a></li>
+                        <li><a runat="server" href="~/Result">分类结果</a></li>
                     </ul>
                 </div>
             </div>
@@ -66,7 +67,6 @@
                 <p>&copy; <%: DateTime.Now.Year %> - HyperVC Web Form</p>
             </footer>
         </div>
-
     </form>
 </body>
 </html>

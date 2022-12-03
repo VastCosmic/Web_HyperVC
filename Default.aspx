@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Web_HyperVC._Default" MaintainScrollPositionOnPostback="true"%>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
-    <div class="jumbotron">
+    <div class="jumbotron" aria-hidden="False" dir="ltr">
         <center><h1>HyperVC - 高光谱图像分类</h1></center>
         <p>&nbsp;</p>
         <p>现在开始吧！使用简单的几步，即可完成图像分类：</p>
@@ -49,14 +48,13 @@
             <asp:CheckBox ID="CheckBox_Dataset3" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox_Dataset3_CheckedChanged" Text="Pavia University" Enabled="False" />
         </p>
         <p>
-            <asp:Button ID="BtnStart" runat="server" Text="开始分类" Width="300px" BorderColor="White" />
+            <asp:Button ID="BtnStart" runat="server" Text="开始分类" Width="300px" BorderColor="White" Enabled="False" OnClick="BtnStart_Click" />
         </p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>3. 分类结果</p>
-        <p>这是您的分类结果，请查看！</p>
-        <p>(TODO......)</p>
-        <p>&nbsp;</p>
+        <p>
+            <asp:Label ID="lblLoadingHyperVC" runat="server" BorderColor="#CCCCFF" BorderStyle="Double" BorderWidth="2px" Font-Bold="True" Text="单击上方按钮开始分类" ></asp:Label>
+        </p>
+        <p>
+            <asp:Label ID="lblCheckResult" runat="server" Font-Bold="True"></asp:Label>
+        </p>
     </div>
-    
 </asp:Content>

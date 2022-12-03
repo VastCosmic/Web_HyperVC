@@ -10,7 +10,7 @@
     <address>
         当然，您可以在下方输入任何您所想反馈的内容，我们将及时加以改进！</address>
     <address>
-        <asp:TextBox ID="TxtBoxContact" runat="server" Height="300px" OnTextChanged="TextBox1_TextChanged" Width="600px"></asp:TextBox>
+        <asp:TextBox ID="TxtBoxContact" runat="server" Height="300px" Width="600px"></asp:TextBox>
     </address>
     <address>
         <asp:Button ID="BtnContactSend" runat="server" Height="30px" Text="发送" Width="600px" OnClick="BtnContactSend_Click" />
