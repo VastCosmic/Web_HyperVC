@@ -105,15 +105,28 @@ namespace Web_HyperVC
                 lblDataSet.Text = CheckBox_Dataset3.Text;
             }
         }
+
         private void WaitLoading()
         {
-            lblLoadingHyperVC.Text = "图像分类中...请耐心等待...";
-            CheckFromCOS();
-            //ImageOut.ImageUrl = "https://hypervc-1313154504.cos.ap-shanghai.myqcloud.com/output.png";
+            lblLoadingHyperVC.Text = "图像分类中...请耐心等待...完成后将自动跳转...";            
+            //lblRecordTime.Visible = true;
+            //lblUsedTime.Visible = true;
+            lblUsedTime.Text = "0";
+
+            timer_check.Enabled = true;     //开启间隔查询
+            //timer_record.Enabled = true;    //开启计时
         }
 
+        protected void timer_check_Tick(object sender, EventArgs e)     //间隔查询
+        { 
+            CheckFromCOS(); //请求COS查询是否分类完成
+        }
+        protected void timer_record_Tick(object sender, EventArgs e)
+        {
+            lblUsedTime.Text = (Convert.ToInt32(lblUsedTime.Text) + 1).ToString();  //运行时间计时
+        }
         /// <summary>
-        /// 查询是否已上传分类结果文件，文件上传于腾讯云COS
+        /// 查询是否已上传分类结果文件，文件由后端上传于腾讯云COS
         /// </summar>
         private void CheckFromCOS()
         {
@@ -148,6 +161,7 @@ namespace Web_HyperVC
                 if(exist== true)    //分类已经完成，对象存在
                 {
                     lblLoadingHyperVC.Text = "分类已经完成，即将跳转分类结果页面...（若长时间未跳转请点击网页顶部手动跳转）";
+                    timer_record.Enabled = false;
                     Response.Redirect("~/Result.aspx");
                 }
             }
@@ -162,8 +176,5 @@ namespace Web_HyperVC
                 Console.WriteLine("CosServerException: " + serverEx.GetInfo());
             }
         }
-
-
-        
     }
 }

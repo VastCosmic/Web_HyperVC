@@ -52,6 +52,12 @@
         </p>
         <p>
             <asp:Label ID="lblLoadingHyperVC" runat="server" BorderColor="#CCCCFF" BorderStyle="Double" BorderWidth="2px" Font-Bold="True" Text="单击上方按钮开始分类" ></asp:Label>
+            <asp:Label ID="lblRecordTime" runat="server" BorderColor="#CCCCFF" BorderStyle="Double" BorderWidth="2px" Font-Bold="True" Text="当前用时：" Visible="False"></asp:Label>
+            <asp:Label ID="lblUsedTime" runat="server" BorderColor="#CCCCFF" BorderStyle="Double" BorderWidth="2px" Font-Bold="True" Visible="False"></asp:Label>
+            <asp:Timer ID="timer_check" runat="server" Enabled="False" Interval="20000" OnTick="timer_check_Tick">
+            </asp:Timer>
+            <asp:Timer ID="timer_record" runat="server" Enabled="False" Interval="1000" OnTick="timer_record_Tick">
+            </asp:Timer>
         </p>
         <p>
             <asp:Label ID="lblCheckResult" runat="server" Font-Bold="True"></asp:Label>
