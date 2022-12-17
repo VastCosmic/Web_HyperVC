@@ -151,6 +151,7 @@
     <Content Include="MatSouce\Salinas_corrected.mat" />
     <Content Include="Model_NET\model_041.md" />
     <Content Include="Model_NET\model_HybridSN_net_0_4_1" />
+    <Content Include="README.md" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
