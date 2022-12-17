@@ -140,6 +140,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Models\HybridSN_Indian_.py" />
     <Content Include="Result.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -239,7 +240,6 @@
     <Folder Include="Controllers\" />
     <Folder Include="MatUploadFile\" />
     <Folder Include="Message\" />
-    <Folder Include="Models\" />
     <Folder Include="OutputImg\" />
     <Folder Include="WebHyperVC\" />
   </ItemGroup>

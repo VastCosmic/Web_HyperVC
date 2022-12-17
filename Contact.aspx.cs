@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Web_HyperVC
 {
@@ -11,7 +7,7 @@ namespace Web_HyperVC
     {
         protected void BtnContactSend_Click(object sender, EventArgs e)
         {
-
+            BtnContactSend.Text = "发送成功!";
         }
     }
 }

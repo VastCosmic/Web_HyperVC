@@ -1,21 +1,9 @@
-﻿using COSXML.Auth;
-using COSXML;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.EnterpriseServices;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using static System.Net.WebRequestMethods;
-using COSXML.Common;
-using COSXML.Transfer;
-using COSXML.Model.Bucket;
-using COSXML.Model.Tag;
+﻿using COSXML;
+using COSXML.Auth;
 using COSXML.Model.Object;
-using System.Web.Http.Results;
+using System;
+using System.IO;
+using System.Web.UI;
 
 namespace Web_HyperVC
 {
@@ -51,7 +39,7 @@ namespace Web_HyperVC
         {
             WaitLoading();
         }
-        private void UploadImg()    
+        private void UploadImg()
         {
             //TODO：判断服务器端是否已有文件
             //判断是否上传了文件
@@ -74,7 +62,7 @@ namespace Web_HyperVC
 
                     FileInfo fileInfo = new FileInfo(@savePath);
                     lblImgName.Text = fileInfo.Name;
-                    lblImgSize.Text = (fileInfo.Length / 1024).ToString()+" KB";
+                    lblImgSize.Text = (fileInfo.Length / 1024).ToString() + " KB";
                     BtnStart.Enabled = true;
                 }
                 else
@@ -86,19 +74,19 @@ namespace Web_HyperVC
 
         private void CheckedChanged(int index)
         {
-            if(index == 0 && CheckBox_Dataset1.Checked == true)
+            if (index == 0 && CheckBox_Dataset1.Checked == true)
             {
                 CheckBox_Dataset2.Checked = false;
                 CheckBox_Dataset3.Checked = false;
                 lblDataSet.Text = CheckBox_Dataset1.Text;
             }
-            else if(index == 1 && CheckBox_Dataset2.Checked == true)
+            else if (index == 1 && CheckBox_Dataset2.Checked == true)
             {
                 CheckBox_Dataset1.Checked = false;
                 CheckBox_Dataset3.Checked = false;
                 lblDataSet.Text = CheckBox_Dataset2.Text;
             }
-            else if(index == 2 && CheckBox_Dataset3.Checked == true)
+            else if (index == 2 && CheckBox_Dataset3.Checked == true)
             {
                 CheckBox_Dataset1.Checked = false;
                 CheckBox_Dataset2.Checked = false;
@@ -108,7 +96,10 @@ namespace Web_HyperVC
 
         private void WaitLoading()
         {
-            lblLoadingHyperVC.Text = "图像分类中...请耐心等待...完成后将自动跳转...";            
+            lblLoadingHyperVC.Text = "图像分类中...请耐心等待...完成后将自动跳转...";
+
+            CallPyRun();
+
             //lblRecordTime.Visible = true;
             //lblUsedTime.Visible = true;
             lblUsedTime.Text = "0";
@@ -117,8 +108,13 @@ namespace Web_HyperVC
             //timer_record.Enabled = true;    //开启计时
         }
 
+        private void CallPyRun()    //TODO 调用后端
+        {
+
+        }
+
         protected void timer_check_Tick(object sender, EventArgs e)     //间隔查询
-        { 
+        {
             CheckFromCOS(); //请求COS查询是否分类完成
         }
         protected void timer_record_Tick(object sender, EventArgs e)
@@ -157,8 +153,8 @@ namespace Web_HyperVC
                 bool exist = cosXml.DoesObjectExist(request);
                 //请求成功
                 Console.WriteLine("object exist state is: " + exist);
-                
-                if(exist== true)    //分类已经完成，对象存在
+
+                if (exist == true)    //分类已经完成，对象存在
                 {
                     lblLoadingHyperVC.Text = "分类已经完成，即将跳转分类结果页面...（若长时间未跳转请点击网页顶部手动跳转）";
                     timer_record.Enabled = false;
