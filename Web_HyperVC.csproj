@@ -140,8 +140,17 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Models\HybridSN_Indian_.py" />
+    <Content Include="Models\HybridSN_Indian.py" />
+    <Content Include="Model_NET\classification_report_0_4_1.txt" />
+    <Content Include="OutputImg\output.png" />
     <Content Include="Result.aspx" />
+    <Content Include="MatSouce\Indian_pines_corrected.mat" />
+    <Content Include="MatSouce\Indian_pines_gt.mat" />
+    <Content Include="MatSouce\PaviaU.mat" />
+    <Content Include="MatSouce\Salinas.mat" />
+    <Content Include="MatSouce\Salinas_corrected.mat" />
+    <Content Include="Model_NET\model_041.md" />
+    <Content Include="Model_NET\model_HybridSN_net_0_4_1" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -240,8 +249,6 @@
     <Folder Include="Controllers\" />
     <Folder Include="MatUploadFile\" />
     <Folder Include="Message\" />
-    <Folder Include="OutputImg\" />
-    <Folder Include="WebHyperVC\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
