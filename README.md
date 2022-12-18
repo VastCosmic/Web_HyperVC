@@ -4,10 +4,10 @@ This is the OUCSE Project_HyperVC's web of 18Group.
 ## Info
 
 ### Environment
-| **IDE**           | **Visual Studio 2022**                |
+| **IDE**           | **Visual Studio 2022, VSCode 2022**   |
 | ----------------- | ------------------------------------- |
 | **Web Framework** | **ASP.NET WEB(.NET Framework 4.7.2)** |
-| **Main Language** | **C#, Python, JSP, HTML**                        |
+| **Main Language** | **C#, Python, JSP, HTML**             |
 | **Other**         | **Anaconda3, Pytorch**                |
 
 ## Now:	Version_1.1
