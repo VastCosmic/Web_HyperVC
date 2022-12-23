@@ -21,7 +21,9 @@
         <p>
             <asp:Button ID="BtnUpImg" runat="server" Text="上传图像" Width="300px" OnClick="BtnUpImg_Click" BorderColor="White" />
         </p>
-        <p>&nbsp;</p>
+        <p>
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+        </p>
         <p>&nbsp;</p>
         <p>2. 开始分类</p>
         <p>您的图像信息将显示在下方，请确认是否正确。</p>

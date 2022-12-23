@@ -2,6 +2,7 @@
 using COSXML.Auth;
 using COSXML.Model.Object;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Web.UI;
 
@@ -110,7 +111,13 @@ namespace Web_HyperVC
 
         private void CallPyRun()    //TODO 调用后端
         {
-
+            string sArgName = @"HybridSN_Indian.py";//python文件    
+            string path = @"D:\VC_VS_PROJECT\HyperVC_py\" + sArgName;
+            Process p = new Process();
+            p.StartInfo.FileName = @"python.exe"; 
+            p.StartInfo.Arguments = path;
+            p.Start();
+            p.WaitForExit();
         }
 
         protected void timer_check_Tick(object sender, EventArgs e)     //间隔查询
@@ -171,6 +178,11 @@ namespace Web_HyperVC
                 //请求失败
                 Console.WriteLine("CosServerException: " + serverEx.GetInfo());
             }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            CallPyRun();
         }
     }
 }

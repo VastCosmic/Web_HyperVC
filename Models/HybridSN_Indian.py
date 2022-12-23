@@ -6,8 +6,10 @@ MAT_KEY = "indian_pines_gt"
 MAT_CORRECTED_KEY = "indian_pines_corrected"
 
 NET_PATH = "D:\VC_VS_PROJECT\Web_HyperVC\Model_NET\model_HybridSN_net_0_4_1"
+CLASSIFICATION_REPORT_PATH = "D:\VC_VS_PROJECT\HyperVC_py\classification_report.txt"
 
-UPLOAD_IMG_PATH = 'D:/VC_VS_PROJECT/Web_HyperVC/OutputImg/output.png'
+IMG_NAME = 'Indian_Output.png'
+UPLOAD_IMG_PATH = 'D:\VC_VS_PROJECT\HyperVC_py\Indian_Output.png'
 
 COS_SECRET_ID = ''
 COS_SECRET_KEY = ''
@@ -37,8 +39,8 @@ client = CosS3Client(config)
 # 删除object
 ## deleteObject
 response = client.delete_object(
-    Bucket='hypervc-1313154504',
-    Key='output.png'
+    Bucket = 'hypervc-1313154504',
+    Key = IMG_NAME
 )
 
 import numpy as np
@@ -287,9 +289,8 @@ def reports (test_loader, y_test, name):
 classification, confusion, oa, each_acc, aa, kappa = reports(test_loader, ytest, 'IP')
 classification = str(classification)
 confusion = str(confusion)
-file_name = "classification_report.txt"
 
-with open(file_name, 'w') as x_file:
+with open(CLASSIFICATION_REPORT_PATH, 'w') as x_file:
     x_file.write('\n')
     x_file.write('{} Kappa accuracy (%)'.format(kappa))
     x_file.write('\n')
