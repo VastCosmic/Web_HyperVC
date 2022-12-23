@@ -112,7 +112,7 @@ namespace Web_HyperVC
         private void CallPyRun()    //TODO 调用后端
         {
             string sArgName = @"HybridSN_Indian.py";//python文件    
-            string path = @"D:\VC_VS_PROJECT\HyperVC_py\" + sArgName;
+            string path = @"D:\VC_VS_PROJECT\Web_HyperVC\HyperVC_py\" + sArgName;
             Process p = new Process();
             p.StartInfo.FileName = @"python.exe"; 
             p.StartInfo.Arguments = path;
