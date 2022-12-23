@@ -10,13 +10,17 @@ This is the OUCSE Project_HyperVC's web of 18Group.
 | **Main Language** | **C#, Python, JSP, HTML**             |
 | **Other**         | **Anaconda3, Pytorch**                |
 
-## Now:	Version_1.1
+## Now:	Version_1.2
 
 1. 现在用户可以上传 Indian Pines 的高光谱图像，由web发送请求，后端响应并输出分类结果与信息，最终显示在web上。
 2. 现在用户可以发送反馈意见到服务器上。
 3. 现在支持的数据集：Indian_pine
 
 ## Version History
+
+### Ver 1.2
+
+优化了前后端调用的接口和逻辑
 
 ### Ver	1.1
 
