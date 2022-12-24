@@ -340,7 +340,7 @@ print("PngSaved.")
 response = client.upload_file(
     Bucket='hypervc-1313154504',
     LocalFilePath= UPLOAD_IMG_PATH,
-    Key='output.png',
+    Key=IMG_NAME,
     PartSize=1,
     MAXThread=10,
     EnableMD5=False

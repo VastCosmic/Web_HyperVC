@@ -21,25 +21,6 @@ namespace Web_HyperVC
             UploadImg();
         }
 
-        protected void CheckBox_Dataset1_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckedChanged(0);
-        }
-
-        protected void CheckBox_Dataset2_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckedChanged(1);
-        }
-
-        protected void CheckBox_Dataset3_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckedChanged(2);
-        }
-
-        protected void BtnStart_Click(object sender, EventArgs e)
-        {
-            WaitLoading();
-        }
         private void UploadImg()
         {
             //TODO：判断服务器端是否已有文件
@@ -73,6 +54,21 @@ namespace Web_HyperVC
             }
         }
 
+        protected void CheckBox_Dataset1_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckedChanged(0);
+        }
+
+        protected void CheckBox_Dataset2_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckedChanged(1);
+        }
+
+        protected void CheckBox_Dataset3_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckedChanged(2);
+        }
+
         private void CheckedChanged(int index)
         {
             if (index == 0 && CheckBox_Dataset1.Checked == true)
@@ -95,39 +91,51 @@ namespace Web_HyperVC
             }
         }
 
+        protected void BtnStart_Click(object sender, EventArgs e)
+        {
+            WaitLoading();
+        }
+
         private void WaitLoading()
         {
             lblLoadingHyperVC.Text = "图像分类中...请耐心等待...完成后将自动跳转...";
-
-            CallPyRun();
-
-            //lblRecordTime.Visible = true;
-            //lblUsedTime.Visible = true;
+            BtnStart.Enabled = false;   //禁用开启分类按钮
+            
+            //以下为计时模块开启
+            timer_check.Enabled = true;     //开启间隔查询
+            lblRecordTime.Visible = true;
+            lblUsedTime.Visible = true;
             lblUsedTime.Text = "0";
 
-            timer_check.Enabled = true;     //开启间隔查询
-            //timer_record.Enabled = true;    //开启计时
+            CallPyRun();    //调用后端
         }
 
-        private void CallPyRun()    //TODO 调用后端
+        /// <summary>
+        /// 调用后端
+        /// </summary>
+        private void CallPyRun()
         {
             string sArgName = @"HybridSN_Indian.py";//python文件    
             string path = @"D:\VC_VS_PROJECT\Web_HyperVC\HyperVC_py\" + sArgName;
             Process p = new Process();
-            p.StartInfo.FileName = @"python.exe"; 
+            p.StartInfo.FileName = @"pythonw.exe"; 
             p.StartInfo.Arguments = path;
             p.Start();
-            p.WaitForExit();
         }
 
-        protected void timer_check_Tick(object sender, EventArgs e)     //间隔查询
-        {
-            CheckFromCOS(); //请求COS查询是否分类完成
-        }
-        protected void timer_record_Tick(object sender, EventArgs e)
+        /// <summary>
+        /// 间隔查询COS与计时器
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void timer_check_Tick(object sender, EventArgs e)     
         {
             lblUsedTime.Text = (Convert.ToInt32(lblUsedTime.Text) + 1).ToString();  //运行时间计时
+            int gapTime = 5;    //查询间隔
+            if(lblUsedTime.Text != "0" && Convert.ToInt32(lblUsedTime.Text)% gapTime == 0)
+                CheckFromCOS(); //请求COS查询是否分类完成
         }
+
         /// <summary>
         /// 查询是否已上传分类结果文件，文件由后端上传于腾讯云COS
         /// </summar>
@@ -154,7 +162,7 @@ namespace Web_HyperVC
             try
             {
                 string bucket = "hypervc-1313154504";
-                string key = "output.png"; //对象键
+                string key = "Indian_Output.png"; //对象键
                 DoesObjectExistRequest request = new DoesObjectExistRequest(bucket, key);
                 //执行请求
                 bool exist = cosXml.DoesObjectExist(request);
@@ -164,8 +172,8 @@ namespace Web_HyperVC
                 if (exist == true)    //分类已经完成，对象存在
                 {
                     lblLoadingHyperVC.Text = "分类已经完成，即将跳转分类结果页面...（若长时间未跳转请点击网页顶部手动跳转）";
-                    timer_record.Enabled = false;
                     Response.Redirect("~/Result.aspx");
+                    timer_check.Enabled = false;
                 }
             }
             catch (COSXML.CosException.CosClientException clientEx)
@@ -178,11 +186,6 @@ namespace Web_HyperVC
                 //请求失败
                 Console.WriteLine("CosServerException: " + serverEx.GetInfo());
             }
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            CallPyRun();
         }
     }
 }

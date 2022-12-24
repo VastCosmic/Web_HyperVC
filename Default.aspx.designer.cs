@@ -51,15 +51,6 @@ namespace Web_HyperVC
         protected global::System.Web.UI.WebControls.Button BtnUpImg;
 
         /// <summary>
-        /// Button1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
         /// lblImgName 控件。
         /// </summary>
         /// <remarks>
@@ -157,15 +148,6 @@ namespace Web_HyperVC
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.Timer timer_check;
-
-        /// <summary>
-        /// timer_record 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.Timer timer_record;
 
         /// <summary>
         /// lblCheckResult 控件。

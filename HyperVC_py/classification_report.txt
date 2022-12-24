@@ -1,7 +1,7 @@
 
-98.51583067690039 Kappa accuracy (%)
+98.51583405962944 Kappa accuracy (%)
 98.69918699186991 Overall accuracy (%)
-97.31513690442138 Average accuracy (%)
+97.31028202592455 Average accuracy (%)
 
                               precision    recall  f1-score   support
 
@@ -34,9 +34,9 @@ Buildings-Grass-Trees-Drives       1.00      0.97      0.99       347
      0    0]
  [   0    0    0  213    0    0    0    0    0    0    0    0    0    0
      0    0]
- [   0    0    3    1  428    1    0    0    0    0    2    0    0    0
+ [   0    0    4    1  427    1    0    0    0    0    2    0    0    0
      0    0]
- [   0    1    0    0    0  650    0    0    0    0    0    0    0    6
+ [   0    1    0    0    0  651    0    0    0    0    0    0    0    5
      0    0]
  [   0    0    0    0    0    0   25    0    0    0    0    0    0    0
      0    0]

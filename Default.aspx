@@ -22,8 +22,7 @@
             <asp:Button ID="BtnUpImg" runat="server" Text="上传图像" Width="300px" OnClick="BtnUpImg_Click" BorderColor="White" />
         </p>
         <p>
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-        </p>
+            &nbsp;</p>
         <p>&nbsp;</p>
         <p>2. 开始分类</p>
         <p>您的图像信息将显示在下方，请确认是否正确。</p>
@@ -56,9 +55,7 @@
             <asp:Label ID="lblLoadingHyperVC" runat="server" BorderColor="#CCCCFF" BorderStyle="Double" BorderWidth="2px" Font-Bold="True" Text="单击上方按钮开始分类" ></asp:Label>
             <asp:Label ID="lblRecordTime" runat="server" BorderColor="#CCCCFF" BorderStyle="Double" BorderWidth="2px" Font-Bold="True" Text="当前用时：" Visible="False"></asp:Label>
             <asp:Label ID="lblUsedTime" runat="server" BorderColor="#CCCCFF" BorderStyle="Double" BorderWidth="2px" Font-Bold="True" Visible="False"></asp:Label>
-            <asp:Timer ID="timer_check" runat="server" Enabled="False" Interval="20000" OnTick="timer_check_Tick">
-            </asp:Timer>
-            <asp:Timer ID="timer_record" runat="server" Enabled="False" Interval="1000" OnTick="timer_record_Tick">
+            <asp:Timer ID="timer_check" runat="server" Enabled="False" Interval="1000" OnTick="timer_check_Tick">
             </asp:Timer>
         </p>
         <p>
