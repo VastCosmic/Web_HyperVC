@@ -1,11 +1,11 @@
-#PATH CONFIG
-
+#CONFIG
+MAT_UPLOAD_PATH = "D:\VC_VS_PROJECT\Web_HyperVC\MatUploadFile\Indian_pines_gt.mat"
 MAT_PATH = "D:\VC_VS_PROJECT\Web_HyperVC\MatSouce\Indian_pines_gt.mat"
 MAT_CORRECTED_PATH = "D:\VC_VS_PROJECT\Web_HyperVC\MatSouce\Indian_pines_corrected.mat"
 MAT_KEY = "indian_pines_gt"
 MAT_CORRECTED_KEY = "indian_pines_corrected"
 
-NET_PATH = "D:\VC_VS_PROJECT\Web_HyperVC\Model_NET\model_HybridSN_net_0_4_1"
+NET_PATH = "D:\VC_VS_PROJECT\Web_HyperVC\Model_NET\model_Indian_net_0_4_1"
 CLASSIFICATION_REPORT_PATH = "D:\VC_VS_PROJECT\Web_HyperVC\HyperVC_py\classification_report.txt"
 
 IMG_NAME = 'Indian_Output.png'
@@ -13,6 +13,8 @@ UPLOAD_IMG_PATH = 'D:\VC_VS_PROJECT\Web_HyperVC\HyperVC_py\Indian_Output.png'
 
 COS_SECRET_ID = ''
 COS_SECRET_KEY = ''
+
+
 
 # 引入腾讯云COS
 # -*- coding=utf-8
