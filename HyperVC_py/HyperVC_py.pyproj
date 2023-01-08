@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6ee0c058-1dd6-4cd2-b347-98f652550fbd</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>HybirdSN_PaviaU.py</StartupFile>
+    <StartupFile>HybridSN_PaviaU.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,8 +22,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="HybirdSN_PaviaU.py" />
-    <Compile Include="HybirdSN_Salinas.py" />
+    <Compile Include="HybridSN_PaviaU.py" />
+    <Compile Include="HybridSN_Salinas.py" />
     <Compile Include="HybridSN_Indian.py" />
   </ItemGroup>
   <ItemGroup>

@@ -143,6 +143,15 @@
     <Content Include="Models\HybridSN_Indian.py" />
     <Content Include="Model_NET\classification_report_0_4_1.txt" />
     <Content Include="OutputImg\output.png" />
+    <Content Include="Resouce\buwu.jpg" />
+    <Content Include="Resouce\buwu_night.jpg" />
+    <Content Include="Resouce\chezhan.jpg" />
+    <Content Include="Resouce\illust_61351818_20200119_170519.png" />
+    <Content Include="Resouce\linghua.png" />
+    <Content Include="Resouce\shuijing.jpg" />
+    <Content Include="Resouce\sitai-xiii-room-zoom3.jpg" />
+    <Content Include="Resouce\sitai-xiii-room-zoom4.jpg" />
+    <Content Include="Resouce\wanye.png" />
     <Content Include="Result.aspx" />
     <Content Include="MatSouce\Indian_pines_corrected.mat" />
     <Content Include="MatSouce\Indian_pines_gt.mat" />

@@ -1093,7 +1093,7 @@ button,
 select,
 textarea {
   font-family: inherit;
-  font-size: inherit;
+  font-size: medium;
   line-height: inherit;
 }
 a {
@@ -1269,6 +1269,7 @@ h1,
 h2,
 .h2 {
   font-size: 30px;
+    height: 37px;
 }
 h3,
 .h3 {
@@ -1288,6 +1289,7 @@ h6,
 }
 p {
   margin: 0 0 10px;
+    text-align: center;
 }
 .lead {
   margin-bottom: 20px;
@@ -1584,7 +1586,7 @@ pre code {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 0px;
 }
 @media (min-width: 768px) {
   .container {
@@ -2633,6 +2635,7 @@ fieldset[disabled] input[type="checkbox"] {
 }
 input[type="file"] {
   display: block;
+    text-align: center;
 }
 input[type="range"] {
   display: block;
@@ -4670,6 +4673,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;
+    width: 120px;
+    text-align: center;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -5045,8 +5050,7 @@ a.badge:focus {
 .jumbotron p {
   margin-bottom: 15px;
   font-size: 21px;
-  font-weight: 200;
-}
+  }
 .jumbotron > hr {
   border-top-color: #d5d5d5;
 }
@@ -5055,9 +5059,8 @@ a.badge:focus {
   padding-right: 15px;
   padding-left: 15px;
   border-radius: 6px;
-    height: 1390px;
-    width: 1300px;
-}
+    height: 1310px;
+    }
 .jumbotron .container {
   max-width: 100%;
 }

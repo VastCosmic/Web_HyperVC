@@ -11,8 +11,8 @@ CLASSIFICATION_REPORT_PATH = "D:\VC_VS_PROJECT\Web_HyperVC\HyperVC_py\classifica
 IMG_NAME = 'Indian_Output.png'
 UPLOAD_IMG_PATH = 'D:\VC_VS_PROJECT\Web_HyperVC\HyperVC_py\Indian_Output.png'
 
-COS_SECRET_ID = ''
-COS_SECRET_KEY = ''
+COS_SECRET_ID = 'AKIDnlZ9bdt1Vq12qVxHUUlqmgYaVIwVuA2i'
+COS_SECRET_KEY = 'Z0EF4iATaUDl8IExWt57xcqumV4RbZKv'
 
 
 

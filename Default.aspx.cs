@@ -100,7 +100,7 @@ namespace Web_HyperVC
         {
             lblLoadingHyperVC.Text = "图像分类中...请耐心等待...完成后将自动跳转...";
             BtnStart.Enabled = false;   //禁用开启分类按钮
-            
+
             //以下为计时模块开启
             timer_check.Enabled = true;     //开启间隔查询
             lblRecordTime.Visible = true;
@@ -115,10 +115,23 @@ namespace Web_HyperVC
         /// </summary>
         private void CallPyRun()
         {
-            string sArgName = @"HybridSN_Indian.py";//python文件    
+            string sArgName = String.Empty; //python文件指向
+            if (CheckBox_Dataset1.Checked == true)
+            {
+                sArgName = @"HybridSN_Indian.py";
+
+            }
+            else if (CheckBox_Dataset2.Checked == true)
+            {
+                sArgName = @"HybridSN_Salinas.py";
+            }
+            else if (CheckBox_Dataset3.Checked == true)
+            {
+                sArgName = @"HybridSN_PaviaU.py";
+            }
             string path = @"D:\VC_VS_PROJECT\Web_HyperVC\HyperVC_py\" + sArgName;
             Process p = new Process();
-            p.StartInfo.FileName = @"pythonw.exe"; 
+            p.StartInfo.FileName = @"python.exe";
             p.StartInfo.Arguments = path;
             p.Start();
         }
@@ -128,11 +141,11 @@ namespace Web_HyperVC
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void timer_check_Tick(object sender, EventArgs e)     
+        protected void timer_check_Tick(object sender, EventArgs e)
         {
             lblUsedTime.Text = (Convert.ToInt32(lblUsedTime.Text) + 1).ToString();  //运行时间计时
             int gapTime = 5;    //查询间隔
-            if(lblUsedTime.Text != "0" && Convert.ToInt32(lblUsedTime.Text)% gapTime == 0)
+            if (lblUsedTime.Text != "0" && Convert.ToInt32(lblUsedTime.Text) % gapTime == 0)
                 CheckFromCOS(); //请求COS查询是否分类完成
         }
 
@@ -150,19 +163,32 @@ namespace Web_HyperVC
               .SetDebugLog(true)  //显示日志
               .Build();  //创建 CosXmlConfig 对象
 
-            string secretId = ""; //"云 API 密钥 SecretId";
-            string secretKey = ""; //"云 API 密钥 SecretKey";
+            string secretId = "AKIDnlZ9bdt1Vq12qVxHUUlqmgYaVIwVuA2i"; //"云 API 密钥 SecretId";
+            string secretKey = "Z0EF4iATaUDl8IExWt57xcqumV4RbZKv"; //"云 API 密钥 SecretKey";
             long durationSecond = 600;  //每次请求签名有效时长，单位为秒
             QCloudCredentialProvider cosCredentialProvider = new DefaultQCloudCredentialProvider(
               secretId, secretKey, durationSecond);
 
             CosXml cosXml = new CosXmlServer(config, cosCredentialProvider);
 
+            string key = String.Empty; //对象键
+            if (CheckBox_Dataset1.Checked == true)
+            {
+                key = "Indian_Output.png";
+
+            }
+            else if (CheckBox_Dataset2.Checked == true)
+            {
+                key = "Salinas_Output.png";
+            }
+            else if (CheckBox_Dataset3.Checked == true)
+            {
+                key = "PaviaU_Output.png";
+            }
             //检查图像对象是否存在
             try
             {
                 string bucket = "hypervc-1313154504";
-                string key = "Indian_Output.png"; //对象键
                 DoesObjectExistRequest request = new DoesObjectExistRequest(bucket, key);
                 //执行请求
                 bool exist = cosXml.DoesObjectExist(request);
@@ -172,7 +198,8 @@ namespace Web_HyperVC
                 if (exist == true)    //分类已经完成，对象存在
                 {
                     lblLoadingHyperVC.Text = "分类已经完成，即将跳转分类结果页面...（若长时间未跳转请点击网页顶部手动跳转）";
-                    Response.Redirect("~/Result.aspx");
+                    string ImgName = key;
+                    Response.Redirect("~/Result.aspx?key=" + ImgName);
                     timer_check.Enabled = false;
                 }
             }
