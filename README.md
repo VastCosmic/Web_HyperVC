@@ -10,13 +10,17 @@ This is the OUCSE Project_HyperVC's web of 18Group.
 | **Main Language** | **C#, Python, JSP, HTML**             |
 | **Other**         | **Anaconda3, Pytorch**                |
 
-## Now:	Version_1.4
-
-1. 现在用户可以上传 IndianPines、Salinas、PaviaU 的高光谱图像，由web发送请求，后端响应并输出分类结果与信息，最终显示在web上。
-2. 现在用户可以发送反馈意见到服务器上。
-3. 现在支持的数据集：IndianPines、Salinas、PaviaU.
+## Now:	Version_1.5.1
+1. 全新的UI设计，更美观的界面
+2. 现在用户可以上传 IndianPines、Salinas、PaviaU 的高光谱图像，由web发送请求，后端响应并输出分类结果与信息，最终显示在web上。
+3. 现在用户可以发送反馈意见到COS云端上。
+4. 现在支持的数据集：IndianPines、Salinas、PaviaU.
 
 ## Version History
+
+### Ver 1.5.1
+
+更换了全新的UI，新增了反馈意见上传至COS云。
 
 ### Ver 1.4
 
