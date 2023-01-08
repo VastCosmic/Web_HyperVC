@@ -25,6 +25,7 @@
     <Compile Include="HybridSN_PaviaU.py" />
     <Compile Include="HybridSN_Salinas.py" />
     <Compile Include="HybridSN_Indian.py" />
+    <Compile Include="CosKey.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.10" />

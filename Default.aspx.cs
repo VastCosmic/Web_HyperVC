@@ -10,6 +10,9 @@ namespace Web_HyperVC
 {
     public partial class _Default : Page
     {
+        string secretId = ""; //"云 API 密钥 SecretId";
+        string secretKey = ""; //"云 API 密钥 SecretKey";
+
         //指定上传文件在服务器上的保存路径
         public string savePath = "D:\\VC_VS_PROJECT\\Web_HyperVC\\MatUploadFile";
         //高光谱图像路径
@@ -131,7 +134,7 @@ namespace Web_HyperVC
             }
             string path = @"D:\VC_VS_PROJECT\Web_HyperVC\HyperVC_py\" + sArgName;
             Process p = new Process();
-            p.StartInfo.FileName = @"python.exe";
+            p.StartInfo.FileName = @"pythonw.exe";
             p.StartInfo.Arguments = path;
             p.Start();
         }
@@ -163,8 +166,6 @@ namespace Web_HyperVC
               .SetDebugLog(true)  //显示日志
               .Build();  //创建 CosXmlConfig 对象
 
-            string secretId = "AKIDnlZ9bdt1Vq12qVxHUUlqmgYaVIwVuA2i"; //"云 API 密钥 SecretId";
-            string secretKey = "Z0EF4iATaUDl8IExWt57xcqumV4RbZKv"; //"云 API 密钥 SecretKey";
             long durationSecond = 600;  //每次请求签名有效时长，单位为秒
             QCloudCredentialProvider cosCredentialProvider = new DefaultQCloudCredentialProvider(
               secretId, secretKey, durationSecond);

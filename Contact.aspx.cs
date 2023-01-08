@@ -9,6 +9,8 @@ namespace Web_HyperVC
 {
     public partial class Contact : Page
     {
+        string secretId = ""; //"云 API 密钥 SecretId";
+        string secretKey = ""; //"云 API 密钥 SecretKey";
         protected void BtnContactSend_Click(object sender, EventArgs e)
         {
             WriteTofile();
@@ -36,8 +38,6 @@ namespace Web_HyperVC
               .SetDebugLog(true)  //显示日志
               .Build();  //创建 CosXmlConfig 对象
 
-            string secretId = "AKIDnlZ9bdt1Vq12qVxHUUlqmgYaVIwVuA2i"; //"云 API 密钥 SecretId";
-            string secretKey = "Z0EF4iATaUDl8IExWt57xcqumV4RbZKv"; //"云 API 密钥 SecretKey";
             long durationSecond = 600;  //每次请求签名有效时长，单位为秒
             QCloudCredentialProvider cosCredentialProvider = new DefaultQCloudCredentialProvider(
               secretId, secretKey, durationSecond);
