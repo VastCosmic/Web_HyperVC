@@ -9,7 +9,7 @@ namespace Web_HyperVC
             string ImgName = Request.QueryString["key"];
             string PictureUrl = "https://hypervc-1313154504.cos.ap-shanghai.myqcloud.com/" + ImgName;
             ImageOut.ImageUrl = PictureUrl;
-            if(PictureUrl!= "https://hypervc-1313154504.cos.ap-shanghai.myqcloud.com/")
+            if (PictureUrl != "https://hypervc-1313154504.cos.ap-shanghai.myqcloud.com/")
                 ImageLoad.Enabled = true;
         }
 

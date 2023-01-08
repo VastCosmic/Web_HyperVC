@@ -10,7 +10,7 @@
                     <asp:Label ID="lblTitle" runat="server" Font-Size="X-Large" Text="这是您的分类结果，请查看！"></asp:Label>
                 </p>
                 <p>
-                    <asp:Image ID="ImageOut" runat="server" Height="500px" Width="500px" ImageUrl="https://hypervc-1313154504.cos.ap-shanghai.myqcloud.com/Indian_Output.png" BorderColor="#CCCCFF" BorderStyle="Double" BorderWidth="2px" />
+                    <asp:Image ID="ImageOut" runat="server" Height="450px" Width="450px" ImageUrl="https://hypervc-1313154504.cos.ap-shanghai.myqcloud.com/Indian_Output.png" BorderColor="#CCCCFF" BorderStyle="Double" BorderWidth="2px" />
 
                 </p>
                 <p>
