@@ -122,6 +122,12 @@ C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Aspnet_regiis.exe -ga server\use
 
 ## Version History
 
+### Ver 1.6
+
+新增部署文档
+新增yaml配置文件用以自定义配置COS
+修改了项目的路径读取逻辑
+
 ### Ver 1.5.1
 
 更换了全新的UI，新增了反馈意见上传至COS云。
