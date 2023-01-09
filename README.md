@@ -1,6 +1,14 @@
 # Web_HyperVC
+
 ## Intro
 This is the OUCSE Project_HyperVC's web of 18Group.
+
+------
+
+[TOC]
+
+
+
 ## Info
 
 ### Environment
@@ -11,14 +19,12 @@ This is the OUCSE Project_HyperVC's web of 18Group.
 | **Other**         | **Anaconda3, Pytorch**                |
 
 ## Now:	Version_1.6
+
 1. 全新的UI设计，更美观的界面
 2. 现在用户可以上传 IndianPines、Salinas、PaviaU 的高光谱图像，由web发送请求，后端响应并输出分类结果与信息，最终显示在web上。
 3. 现在用户可以发送反馈意见到COS云端上。
 4. 现在支持的数据集：IndianPines、Salinas、PaviaU.
 
-
-
-[TOC]
 
 # 部署文档（Windows）
 
