@@ -68,6 +68,22 @@ This is the OUCSE Project_HyperVC's web of 18Group.
 
 ![image-20230109144219392](https://vc-image-1313154504.cos.ap-shanghai.myqcloud.com/image/202301091442431.png)
 
+### 项目引用与项目生成
+
+使用VS2022打开项目文件中的解决方案Web_HyperVC.sln，
+
+右击Web_HyperVC项目，找到项目根目录下的COSXML.dll，并添加COSXML.dll引用。
+
+随后右击项目，并点击重新生成，然后右击解决方案-清理解决方案，并重新生成解决方案。
+
+
+
+![image-20230109185012734](https://vc-image-1313154504.cos.ap-shanghai.myqcloud.com/image/202301091853051.png)
+
+![image-20230109185116555](https://vc-image-1313154504.cos.ap-shanghai.myqcloud.com/image/202301091853971.png)
+
+![](https://vc-image-1313154504.cos.ap-shanghai.myqcloud.com/image/202301091853014.png)
+
 ### 部署Web网站
 
 打开**IIS管理器**，并右键后点击**添加网站**。
