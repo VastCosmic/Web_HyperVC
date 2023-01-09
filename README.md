@@ -3,12 +3,6 @@
 ## Intro
 This is the OUCSE Project_HyperVC's web of 18Group.
 
-------
-
-[TOC]
-
-
-
 ## Info
 
 ### Environment
