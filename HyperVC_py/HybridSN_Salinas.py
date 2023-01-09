@@ -1,15 +1,34 @@
+import os
+PY_PROJECT_ROOT = os.path.dirname(os.path.realpath(__file__))   #获取PY项目根目录
+PROJECT_ROOT=PY_PROJECT_ROOT[:-10] #获取项目根目录
+print(PROJECT_ROOT)
+
+#读取配置文件
+import yaml
+yamlPath = PROJECT_ROOT+"HyperVC_Setting.yaml"
+f = open(yamlPath,'r',encoding='utf-8')
+cont = f.read()
+cfg = yaml.safe_load(cont)
+for value in cfg.values():
+    print(value)
+
 #CONFIG
-MAT_UPLOAD_PATH = "D:\VC_VS_PROJECT\Web_HyperVC\MatUploadFile\Salinas_gt.mat"
-MAT_PATH = "D:\VC_VS_PROJECT\Web_HyperVC\MatSouce\Salinas_gt.mat"
-MAT_CORRECTED_PATH = "D:\VC_VS_PROJECT\Web_HyperVC\MatSouce\Salinas_corrected.mat"
+COS_SECRET_ID=cfg['secretId']
+COS_SECRET_KEY=cfg['secretKey']
+COS_Bucket=cfg['bucket']
+COS_AP=cfg['region']
+
+MAT_UPLOAD_PATH = PROJECT_ROOT+"Models\MatUploadFile\Salinas_gt.mat"
+MAT_PATH = PROJECT_ROOT+"Models\MatSouce\Salinas_gt.mat"
+MAT_CORRECTED_PATH = PROJECT_ROOT+"Models\MatSouce\Salinas_corrected.mat"
 MAT_KEY = "salinas_gt"
 MAT_CORRECTED_KEY = "salinas_corrected"
 
-NET_PATH = "D:\VC_VS_PROJECT\Web_HyperVC\Model_NET\model_Salinas_net.pth"
-CLASSIFICATION_REPORT_PATH = "D:\VC_VS_PROJECT\Web_HyperVC\HyperVC_py\classification_report.txt"
+NET_PATH = PROJECT_ROOT+"Models\Model_NET\model_Salinas_net.pth"
+CLASSIFICATION_REPORT_PATH = PROJECT_ROOT+"HyperVC_py\classification_report.txt"
 
 IMG_NAME = 'Salinas_Output.png'
-UPLOAD_IMG_PATH = 'D:\VC_VS_PROJECT\Web_HyperVC\HyperVC_py\Salinas_Output.png'
+UPLOAD_IMG_PATH = PROJECT_ROOT+'HyperVC_py\Salinas_Output.png'
 
 # 引入腾讯云COS
 # -*- coding=utf-8
@@ -17,14 +36,14 @@ from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
 import logging
-import CosKey
+
 # 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
-secret_id = CosKey.COS_SECRET_ID     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
-secret_key = CosKey.COS_SECRET_KEY        # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
-region = 'ap-shanghai'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+secret_id = COS_SECRET_ID     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = COS_SECRET_KEY        # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = COS_AP      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
                            # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
 token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
@@ -36,7 +55,7 @@ client = CosS3Client(config)
 # 删除object
 ## deleteObject
 response = client.delete_object(
-    Bucket = 'hypervc-1313154504',
+    Bucket = COS_Bucket,
     Key = IMG_NAME
 )
 
@@ -143,7 +162,7 @@ pca_components = 30
 
 # load mat
 X = sio.loadmat(MAT_CORRECTED_PATH)[MAT_CORRECTED_KEY]
-y = sio.loadmat(MAT_PATH)[MAT_KEY]
+y = sio.loadmat(MAT_UPLOAD_PATH)[MAT_KEY]
 
 
 height = y.shape[0]
@@ -178,7 +197,7 @@ print("PngSaved.")
 #### 高级上传接口
 # 根据文件大小自动选择简单上传或分块上传，分块上传具备断点续传功能。
 response = client.upload_file(
-    Bucket='hypervc-1313154504',
+    Bucket=COS_Bucket,
     LocalFilePath= UPLOAD_IMG_PATH,
     Key=IMG_NAME,
     PartSize=1,

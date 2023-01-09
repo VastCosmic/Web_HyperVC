@@ -1,7 +1,7 @@
 
-98.50345633912887 Kappa accuracy (%)
+98.50345357023107 Kappa accuracy (%)
 98.68834688346884 Overall accuracy (%)
-97.30076908832943 Average accuracy (%)
+97.24073214251662 Average accuracy (%)
 
                               precision    recall  f1-score   support
 
@@ -20,7 +20,7 @@
                        Wheat       1.00      1.00      1.00       185
                        Woods       0.99      1.00      1.00      1139
 Buildings-Grass-Trees-Drives       1.00      0.97      0.99       347
-          Stone-Steel-Towers       0.90      0.99      0.94        84
+          Stone-Steel-Towers       0.90      0.98      0.94        84
 
                     accuracy                           0.99      9225
                    macro avg       0.98      0.97      0.98      9225
@@ -34,7 +34,7 @@ Buildings-Grass-Trees-Drives       1.00      0.97      0.99       347
      0    0]
  [   0    0    0  213    0    0    0    0    0    0    0    0    0    0
      0    0]
- [   0    0    4    1  427    1    0    0    0    0    2    0    0    0
+ [   0    0    3    1  428    1    0    0    0    0    2    0    0    0
      0    0]
  [   0    1    0    0    0  650    0    0    0    0    0    0    0    6
      0    0]
@@ -56,5 +56,5 @@ Buildings-Grass-Trees-Drives       1.00      0.97      0.99       347
      0    0]
  [   0    0    0    0    0    0    0    0    0    0   10    0    0    0
    337    0]
- [   0    0    0    0    0    0    0    0    0    0    0    1    0    0
-     0   83]]
+ [   0    0    0    0    0    0    0    0    0    0    0    2    0    0
+     0   82]]

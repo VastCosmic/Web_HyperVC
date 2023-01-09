@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6ee0c058-1dd6-4cd2-b347-98f652550fbd</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>HybridSN_PaviaU.py</StartupFile>
+    <StartupFile>HybridSN_Indian.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,10 +25,12 @@
     <Compile Include="HybridSN_PaviaU.py" />
     <Compile Include="HybridSN_Salinas.py" />
     <Compile Include="HybridSN_Indian.py" />
-    <Compile Include="CosKey.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.10" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

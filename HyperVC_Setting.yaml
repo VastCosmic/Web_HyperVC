@@ -1,0 +1,14 @@
+# 腾讯云密钥
+# 替换为用户的 SecretId等，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secretId: 
+secretKey: 
+
+# 对象存储COS
+# 腾讯云账户的账户标识APPID 示例 appid: 1234567890
+appid: 
+# 存储桶名称 示例 bucket: hypervc-1234567890
+bucket: 
+
+# 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+# 存储桶地域 示例 region: ap-shanghai
+region: 

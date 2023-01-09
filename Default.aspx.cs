@@ -5,19 +5,22 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Web.UI;
+using Web_HyperVC.Controllers;
 
 namespace Web_HyperVC
 {
     public partial class _Default : Page
     {
-        string secretId = ""; //"云 API 密钥 SecretId";
-        string secretKey = ""; //"云 API 密钥 SecretKey";
+        public string secretId;                   //云 API 密钥 SecretId
+        public string secretKey;                  //云 API 密钥 SecretKey
+        public string bucket;   //云存储桶名称 
+        public string appid;    //设置腾讯云账户的账户标识 APPID
+        public string region;   //设置一个默认的存储桶地域
 
         //指定上传文件在服务器上的保存路径
-        public string savePath = "D:\\VC_VS_PROJECT\\Web_HyperVC\\MatUploadFile";
+        public string savePath;
         //高光谱图像路径
         public string ImgPath;
-
 
         protected void BtnUpImg_Click(object sender, EventArgs e)
         {
@@ -34,6 +37,7 @@ namespace Web_HyperVC
                 //检查文件格式
                 if (fileFormat == ".mat")
                 {
+                    savePath = Server.MapPath("~/") + "/Models/MatUploadFile";
                     //检查服务器上是否存在这个物理路径，如果不存在则创建
                     if (!System.IO.Directory.Exists(@savePath))
                     {
@@ -99,6 +103,20 @@ namespace Web_HyperVC
             WaitLoading();
         }
 
+        /// <summary>
+        /// 加载YAML文件
+        /// </summary>
+        protected void LoadConfig()
+        {
+            ReadConfig readConfig = new ReadConfig();
+            readConfig.LoadYaml();
+            secretId = readConfig.secretId;
+            secretKey = readConfig.secretKey;
+            bucket = readConfig.bucket;
+            appid = readConfig.appid;
+            region = readConfig.region;
+        }
+
         private void WaitLoading()
         {
             lblLoadingHyperVC.Text = "图像分类中...请耐心等待...完成后将自动跳转...";
@@ -132,7 +150,7 @@ namespace Web_HyperVC
             {
                 sArgName = @"HybridSN_PaviaU.py";
             }
-            string path = @"D:\VC_VS_PROJECT\Web_HyperVC\HyperVC_py\" + sArgName;
+            string path = Server.MapPath("~/") + "/HyperVC_py/" + sArgName;
             Process p = new Process();
             p.StartInfo.FileName = @"pythonw.exe";
             p.StartInfo.Arguments = path;
@@ -149,7 +167,11 @@ namespace Web_HyperVC
             lblUsedTime.Text = (Convert.ToInt32(lblUsedTime.Text) + 1).ToString();  //运行时间计时
             int gapTime = 5;    //查询间隔
             if (lblUsedTime.Text != "0" && Convert.ToInt32(lblUsedTime.Text) % gapTime == 0)
+            {
+                LoadConfig();
                 CheckFromCOS(); //请求COS查询是否分类完成
+            }
+                
         }
 
         /// <summary>
@@ -157,9 +179,8 @@ namespace Web_HyperVC
         /// </summar>
         private void CheckFromCOS()
         {
+            region = "ap-shanghai";
             //初始化 CosXmlConfig 
-            string appid = "1313154504";//设置腾讯云账户的账户标识 APPID
-            string region = "ap-shanghai"; //设置一个默认的存储桶地域
             CosXmlConfig config = new CosXmlConfig.Builder()
               .IsHttps(true)  //设置默认 HTTPS 请求
               .SetRegion(region)  //设置一个默认的存储桶地域
@@ -189,7 +210,6 @@ namespace Web_HyperVC
             //检查图像对象是否存在
             try
             {
-                string bucket = "hypervc-1313154504";
                 DoesObjectExistRequest request = new DoesObjectExistRequest(bucket, key);
                 //执行请求
                 bool exist = cosXml.DoesObjectExist(request);

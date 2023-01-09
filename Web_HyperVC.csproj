@@ -102,6 +102,9 @@
     <Reference Include="Microsoft.AspNet.FriendlyUrls">
       <HintPath>packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
+    <Reference Include="YamlDotNet, Version=12.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <HintPath>packages\YamlDotNet.12.3.1\lib\net47\YamlDotNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -140,8 +143,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Models\HybridSN_Indian.py" />
-    <Content Include="Model_NET\classification_report_0_4_1.txt" />
+    <Content Include="Models\Model_NET\classification_report_0_4_1.txt" />
     <Content Include="OutputImg\output.png" />
     <Content Include="Resouce\buwu.jpg" />
     <Content Include="Resouce\buwu_night.jpg" />
@@ -153,14 +155,18 @@
     <Content Include="Resouce\sitai-xiii-room-zoom4.jpg" />
     <Content Include="Resouce\wanye.png" />
     <Content Include="Result.aspx" />
-    <Content Include="MatSouce\Indian_pines_corrected.mat" />
-    <Content Include="MatSouce\Indian_pines_gt.mat" />
-    <Content Include="MatSouce\PaviaU.mat" />
-    <Content Include="MatSouce\Salinas.mat" />
-    <Content Include="MatSouce\Salinas_corrected.mat" />
-    <Content Include="Model_NET\model_041.md" />
-    <Content Include="Model_NET\model_HybridSN_net_0_4_1" />
+    <Content Include="Models\MatSouce\Indian_pines_corrected.mat" />
+    <Content Include="Models\MatSouce\Indian_pines_gt.mat" />
+    <Content Include="Models\MatSouce\PaviaU.mat" />
+    <Content Include="Models\MatSouce\Salinas.mat" />
+    <Content Include="Models\MatSouce\Salinas_corrected.mat" />
+    <Content Include="Models\Model_NET\model_041.md" />
     <Content Include="README.md" />
+    <Content Include="Models\Model_NET\Indian_pines.pth" />
+    <Content Include="Models\Model_NET\model_Indian_net_0_4_1" />
+    <Content Include="Models\Model_NET\model_PaviaU_net.pth" />
+    <Content Include="Models\Model_NET\model_Salinas_net.pth" />
+    <Content Include="HyperVC_Setting.yaml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -214,6 +220,8 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\Configs.cs" />
+    <Compile Include="Controllers\ReadConfig.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -256,9 +264,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="MatUploadFile\" />
     <Folder Include="Message\" />
+    <Folder Include="Models\MatUploadFile\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
