@@ -1,5 +1,7 @@
 # Web_HyperVC
 
+泠光(HyperVC)--基于混合神经网络HybridSN的高光谱图像分类Web应用程序
+
 ## Intro
 This is the OUCSE Project_HyperVC's web of 18Group.
 
