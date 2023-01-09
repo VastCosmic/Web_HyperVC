@@ -76,33 +76,33 @@ This is the OUCSE Project_HyperVC's web of 18Group.
 
 右击Web_HyperVC项目，找到项目根目录下的COSXML.dll，并添加COSXML.dll引用。
 
-随后右击项目，并点击重新生成，然后右击解决方案-清理解决方案，并重新生成解决方案。
-
-
+然后右击解决方案-清理解决方案，并重新生成解决方案。
 
 ![image-20230109185012734](https://vc-image-1313154504.cos.ap-shanghai.myqcloud.com/image/202301091853051.png)
 
 ![image-20230109185116555](https://vc-image-1313154504.cos.ap-shanghai.myqcloud.com/image/202301091853971.png)
 
-![](https://vc-image-1313154504.cos.ap-shanghai.myqcloud.com/image/202301091853014.png)
+![image-20230109210836872](https://vc-image-1313154504.cos.ap-shanghai.myqcloud.com/image/202301092108926.png)
 
 ### 部署Web网站
 
 打开**IIS管理器**，并右键后点击**添加网站**。
 
-随意输入一个网站名称，选择**物理路径**到刚才下载的**项目文件根目录**。
+输入一个**网站名称**，选择**物理路径**到刚才下载的**项目文件根目录**。
 
 **修改端口**，建议为5000~9999之间，点击确定。(若有https或域名需求可另外自行配置)
 
-
+打开**应用程序池**，找到刚刚添加的web应用程序。**右击-高级设置-进程模型-标识**，修改标识为**自定义账户**，设置为**系统管理员账户**。确定后重启网站。
 
 随后即可使用 **localhost:端口名** 访问网站。
-
-<img src="https://vc-image-1313154504.cos.ap-shanghai.myqcloud.com/image/202301091152263.png" alt="image-20230109115227164" style="zoom: 33%;" />
 
 ![](https://vc-image-1313154504.cos.ap-shanghai.myqcloud.com/image/202301091154372.png)
 
 <img src="https://vc-image-1313154504.cos.ap-shanghai.myqcloud.com/image/202301091158366.png" alt="image-20230109115808304" style="zoom:67%;" />
+
+![image-20230109211031868](https://vc-image-1313154504.cos.ap-shanghai.myqcloud.com/image/202301092110909.png)
+
+![image-20230109211334505](https://vc-image-1313154504.cos.ap-shanghai.myqcloud.com/image/202301092113550.png)
 
 ## 环境与项目文件准备 -- Python
 
