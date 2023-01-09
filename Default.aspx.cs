@@ -150,7 +150,7 @@ namespace Web_HyperVC
             {
                 sArgName = @"HybridSN_PaviaU.py";
             }
-            string path = Server.MapPath("~/") + "/HyperVC_py/" + sArgName;
+            string path = Server.MapPath("~/") + @"HyperVC_py\" + sArgName;    
             Process p = new Process();
             p.StartInfo.FileName = @"pythonw.exe";
             p.StartInfo.Arguments = path;
